@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.leo.scfeign.RestResponse;
-import com.leo.scfeign.service.EurekaClientConsum;
+import com.leo.scfeign.service.EurekaClientConsume;
 
 /**
  * Created by leo on 2018/1/22.
@@ -13,11 +13,11 @@ import com.leo.scfeign.service.EurekaClientConsum;
 @RestController
 public class FeignTestController {
     @Autowired
-    private EurekaClientConsum eurekaClientConsum;
+    private EurekaClientConsume eurekaClientConsume;
 
 
     @GetMapping("/test")
     public RestResponse test() {
-        return eurekaClientConsum.testClient();
+        return eurekaClientConsume.testClient();
     }
 }
